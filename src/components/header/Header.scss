@@ -1,0 +1,27 @@
+.header{
+  padding: 15px 10px;
+  background: lightblue;
+  .navlist{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li:first-child{
+      margin-right: 25px;
+    }
+    .navlinks{
+      color: black;
+      font-size: 18px;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: all .5s ease-in-out;
+      padding: 10px;
+      background: lightyellow;
+      border-radius: 5px;
+    }
+    .navlinks:hover{
+      color: grey;
+      background: lightseagreen;
+    }
+  }
+}

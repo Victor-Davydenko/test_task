@@ -1,0 +1,28 @@
+#square{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.inputs_holder{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  span:not(:first-child){
+    display: inline-block;
+    width: 25px;
+    margin: 0 0 0 15px;
+  }
+  span:first-child{
+    display: inline-block;
+    width: 25px;
+  }
+}
+
+.inputs_holder.hidden{
+  visibility: hidden;
+}
+
+.button_holder button{
+  margin-right: 15px;
+}
