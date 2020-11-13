@@ -10,18 +10,8 @@ export const ColorPicker = ()=> {
     const [value, setValue] = useState(`rgb(${colors.R},${colors.G},${colors.B})`)
     const [slidersShower, setSlidersShower] = useState(true)
 
-    const onChange = (event)=>{
-
-        if(event.target.id === 'r_input'){
-            setColors({...colors,R: +event.target.value})
-        }
-        if(event.target.id === 'g_input'){
-            setColors({...colors,G: +event.target.value})
-        }
-        if(event.target.id === 'b_input'){
-            setColors({...colors,B: +event.target.value})
-        }
-
+    const onChange = (event, key)=>{
+        setColors({...colors,[key]: +event.target.value})
         setValue(`rgb(${colors.R},${colors.G},${colors.B})`)
     }
 
@@ -41,11 +31,11 @@ export const ColorPicker = ()=> {
             <div id="square" style={{backgroundColor: `${value}`}}></div>
              <div className={`${slidersShower? "inputs_holder":"inputs_holder hidden"}`}>
                  <span>{colors.R}</span>
-                 <input type="range" id='r_input' min={0} max={255} value={colors.R} onChange={onChange}/>
+                 <input type="range"  min={0} max={255} value={colors.R} onChange={(event)=>onChange(event,'R')}/>
                  <span>{colors.G}</span>
-                 <input type="range" id='g_input' min={0} max={255} value={colors.G} onChange={onChange}/>
+                 <input type="range"  min={0} max={255} value={colors.G} onChange={(event)=>onChange(event,'G')}/>
                  <span>{colors.B}</span>
-                 <input type="range" id='b_input' min={0} max={255} value={colors.B} onChange={onChange}/>
+                 <input type="range"  min={0} max={255} value={colors.B} onChange={(event)=>onChange(event,'B')}/>
             </div>
             <div className='button_holder'>
                 <button className='btn btn-sm btn-primary' onClick={onCancel}>Cancel</button>
